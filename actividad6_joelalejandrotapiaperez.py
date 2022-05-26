@@ -30,14 +30,11 @@ class Cuenta:
       print("Ingreso exitoso!")
 
   def retirar(self,cantidad):
-    self.cantidad -= cantidad
-    print("Retiro exitoso!")
-
-    # if self.cantidad>=cantidad:
-    #   self.cantidad -= cantidad
-    #   print("Retiro exitoso!")
-    # else:
-    #   print(f"La cantidad a retirar es mayor al disponible [${self.cantidad}]\n")
+    if self.cantidad>=cantidad:
+      self.cantidad -= cantidad
+      print("Retiro exitoso!")
+    else:
+      print(f"Retiro rechazado! La cantidad a retirar [${cantidad}] es mayor al disponible [${self.cantidad}]")
 
 cuenta = Cuenta("Joel Tapia")
 cuenta.ingresar(-500)
